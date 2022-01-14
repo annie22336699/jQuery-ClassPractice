@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Content filter</title>
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.css" />
+    <style>
+      .names {
+        width: 200px;
+        height: 50px;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="names">Jason Kidd</div>
+    <div class="names">LeBron James <p>123</p></div>
+    <div class="names">Jason Williams</div>
+    <div class="names">James Harden </div>
+    <div class="names"></div>
+
+    <table class="table table-bordered empty">
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td></td>
+          <td>3</td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div>abc</div>
+    <div><p>def</p></div>
+
+    <script src="./js/jquery-3.6.0.js"></script>
+    <script src="./bootstrap/js/bootstrap.bundle.js"></script>
+
+    <script>
+      $("div.names:contains('Jason')").css("background", "yellow");
+      $(".empty td:empty").css("background", "yellow");
+      $(".names:empty").css("background", "#ccc");
+      $("div:has(p)").css("background", "#bbd5");       // 在div裡有P的
+    </script>
+  </body>
+</html>

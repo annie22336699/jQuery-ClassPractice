@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>表格表單</title>
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.css">
+</head>
+<body>
+    <div class="container my-4">
+        <div class="row">
+            <table class="table table-bordered">
+                <tr>
+                    <td>第1個</td>
+                    <td>第2個</td>
+                    <td>第3個</td>
+                    <td>第4個</td>
+                    <td>第5個</td>
+                </tr>
+                <tr>
+                    <td>第1個</td>
+                    <td>第2個</td>
+                    <td>第3個</td>
+                    <td>第4個</td>
+                    <td>第5個</td>
+                </tr>
+                <tr>
+                    <td>第1個</td>
+                    <td>第2個</td>
+                    <td>第3個</td>
+                    <td>第4個</td>
+                    <td>第5個</td>
+                </tr>
+                <tr>
+                    <td>第1個</td>
+                    <td>第2個</td>
+                    <td>第3個</td>
+                    <td>第4個</td>
+                    <td>第5個</td>
+                </tr>
+                <tr>
+                    <td>第1個 <h6>塞一個h6</h6></td>
+                    <td>第2個</td>
+                    <td>第3個</td>
+                    <td>第4個</td>
+                    <td>第5個</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+<h1>我在table外</h1>
+<h2>我也在table外</h2>
+
+    <script src="./js/jquery-3.6.0.js"></script>
+    <script src="./bootstrap/js/bootstrap.bundle.js"></script>
+
+    <script>
+        // $('td:eq(0)').css('background', '#ccc');
+        // $('td:eq(10)').css('background', '#ccc');
+        // $('td:eq(3)').css('background', '#ccc');
+        // $('td:eq(7)').css('background', '#ccc');
+        $('td:even').css('background', '#bed4e7');  // 偶數
+        // $('td:odd').css('background', '#bed4e7');  // 奇數
+        $('td:eq(2)').css('background', '#ccc');  //會後蓋前
+        $('td:first').css('background', '#e294b9');
+        $('td:last').css('background', '#ffd1b3');
+        // $('td:eq(0)').css('background', '#444');  // 可取代first所以更常用eq
+        // $('td:eq(-1)').css('background', '#444'); // 可取代last所以更常用eq
+        $('td:header').css('color', '#bed4e7');  // 又不在table內XD 抓不到
+        $(':header').css('color', '#bed4e7');  // 這樣就抓到了
+        $('td :header').css('color', '#e294b9');  // ←有空白，跟css的子孫輩選擇一樣寫法 這樣就抓到了
+        $('td>:header').css('color', '#ffd1b3');  // ←有空白，跟css的子孫輩選擇一樣寫法 這樣就抓到了
+        </script>
+</body>
+</html>

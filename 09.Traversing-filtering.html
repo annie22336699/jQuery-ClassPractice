@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.css">
+    <title>Traversing遍歷</title>
+</head>
+<body>
+    <div class="container my-4">
+        <div class="row">
+            <table class="table table-bordered">
+                <tr>
+                    <td>第1個</td>
+                    <td>第2個</td>
+                    <td>第3個</td>
+                    <td>第4個</td>
+                    <td>第5個</td>
+                </tr>
+                <tr>
+                    <td>第1個</td>
+                    <td>第2個</td>
+                    <td>第3個</td>
+                    <td>第4個</td>
+                    <td>第5個</td>
+                </tr>
+                <tr>
+                    <td>第1個</td>
+                    <td>第2個</td>
+                    <td>第3個</td>
+                    <td>第4個</td>
+                    <td>第5個</td>
+                </tr>
+                <tr>
+                    <td>第1個</td>
+                    <td>第2個</td>
+                    <td>第3個</td>
+                    <td>第4個</td>
+                    <td>第5個</td>
+                </tr>
+                <tr>
+                    <td>第1個 <h6>塞一個h6</h6></td>
+                    <td>第2個</td>
+                    <td>第3個</td>
+                    <td>第4個</td>
+                    <td>第5個</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <script src="./js/jquery-3.6.0.js"></script>
+    <script src="./bootstrap/js/bootstrap.bundle.js"></script>
+
+    <script>
+        $('td').css('background', '#ccc');
+        $('td:eq(0)').css('background', '#888');
+        // $('td').eq(0).css('color', '#fdfdcc');
+        $('td').odd().css('background', '#333').css('color', '#ccc').eq(0).css('color', '#fdfdcc');  // 選取td下的奇數個td，更換底色及字色，之中的第1個再改字色
+        
+        </script>
+
+</body>
+</html>

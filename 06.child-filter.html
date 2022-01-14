@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>子層選擇器</title>
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.css">
+    <style>
+        .wrap{
+            width: 1000px;
+            height: 600px;
+            display: flex;
+            flex-wrap: wrap;
+            align-content: flex-start;
+            background-color: rgb(220, 239, 241);
+            color: #ce4880;
+        }
+        .box{
+            width: 100px;
+            height: 100px;
+            outline: 1px solid #2b4d6d;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap m-3">
+        <p>p1</p>
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+        <p>p2</p>
+        <div class="box">4</div>
+        <div class="box">5</div>
+        <p>p3</p>
+        <div class="box">6</div>
+        <div class="box">7</div>
+        <div class="box">8</div>
+        <div class="box">9</div>
+        <div class="box">10</div>
+        <div class="box">11</div>
+        <p>p4</p>
+        <div class="box">12</div>
+        <p>p5</p>
+    </div>
+    <div class="wrap m-3">
+        <div class="box">11</div>
+    </div>
+
+    <script src="./js/jquery-3.6.0.js"></script>
+    <script src="./bootstrap/js/bootstrap.bundle.js"></script>
+
+    <script>
+        $('.box:first-child').css('background', '#7ac6e9'); // 不看類型的第一個小孩，結果因為目前p才是第一個小孩，所以完全選不到
+        $('.box:last-child').css('background', '#d7b0f1');  // 不看類型的最後一個小孩，結果因為目前p才是最後一個小孩，所以完全選不到
+        $('.box:first-of-type').css('background', '#5f81df');  // 同類型(看標籤)的第一個小孩
+        // $(':first-of-type').css('background', '#dfb75f');  // 沒有標籤會看到很可怕的事情
+        // $('.wrap:first-of-type').css('background', '#5f81df');
+        $('.wrap :first-of-type').css('background', '#5fdf7b');  // 同類型(看標籤)的第一個小孩(wrap子孫層的第一個小孩※有沒有空白超重要)
+        $('.box:nth-child(4)').css('background', '#eb9191');
+        $('.box:nth-last-child(4)').css('background', '#eb9191'); 
+        $('.div::only-of-type').css('background', '#ce4880'); 
+    </script>
+</body>
+</html>
