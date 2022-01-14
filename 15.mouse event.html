@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>滑鼠事件</title>
+</head>
+<body>
+    <button class="a1">點擊查看console.log</button>
+    <input type="checkbox" class="a2" checked>
+    <h3>yea</h3>
+
+    <script src="./js/jquery-3.6.0.js"></script>
+    <script>3
+        $('.a2').click(function(){
+            console.log('yeeeee');
+            $('h3').css('font-size', '3rem');
+        });
+
+        $('.a1').mousedown(function(){
+            console.log('hi~');
+            $('h3').css('color', '#ccc');
+        });
+        $('.a1').mouseup(function(){
+            console.log('oh no');
+            $('h3').css('color', '#000');
+        });
+        $('h3').contextmenu(function(){
+            console.log('contextmenu');
+        });
+
+    </script>
+</body>
+</html>

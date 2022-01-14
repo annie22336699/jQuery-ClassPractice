@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>end</title>
+</head>
+<body>
+    <div class="wrap">
+        <ul class="level_1">
+          <li class="item_1">item_1</li>
+          <li class="item_2">
+            item_2
+            <ul class="level_2">
+              <li class="item_01">item_01
+                <ul class="level_4">
+                    <li class="item0001">item_001</li>
+                    <li class="item0002">item_002</li>
+                    <li class="item0003">item_003</li>
+                  </ul>
+              </li>
+              <li class="item_02">
+                item_02
+                <ul class="level_3">
+                  <li class="item001">item_001</li>
+                  <li class="item002">item_002</li>
+                  <li class="item003">item_003</li>
+                </ul>
+              </li>
+              <li class="item_03">item_03</li>
+            </ul>
+          </li>
+          <li class="item_3">item_3</li>
+        </ul>
+      </div>
+
+    <script src="./js/jquery-3.6.0.js"></script>
+    <script>
+        $('ul.level_1').find('.item0001').css('outline', '1px solid red').end().find('.item_03').css('outline', '1px solid blue');
+    </script>
+</body>
+</html>
