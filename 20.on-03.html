@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>on事件集合</title>
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+            border: 1px solid blue;
+            border-radius: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+
+    <script src="./js/jquery-3.6.0.js"></script>
+    <script>
+        $(".box").on("click mouseenter mouseleave", function(){
+            console.log('333');
+            // 滿適合拿來當作slider的小點，拿去改了ex5
+        });
+
+    </script>
+</body>
+</html>

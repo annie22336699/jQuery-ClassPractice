@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>off-解除綁定on事件</title>
+</head>
+<body>
+    <button id="hi">hi</button>
+    <button id="on">on</button>
+    <button id="off">off</button>
+
+    <script src="./js/jquery-3.6.0.js"></script>
+    <script>
+        $('#hi').on('click', function(){
+            console.log('hi');
+        });
+        function writeHere(){
+            console.log('on');
+        };
+        $('#on').on('click', writeHere);
+
+        // $('#on').on('click', function writeHere(){
+        //     console.log('on2');
+        //     writeHere();  // 會炸裂XD 
+        // }); 
+        
+        $('#off').on('click', function(){
+            console.log('off');
+            $('#on').off('click',writeHere);
+        });
+
+    </script>
+</body>
+</html>

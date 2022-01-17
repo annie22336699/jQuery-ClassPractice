@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>on事件</title>
+</head>
+<body>
+    <button>戳戳</button>
+    <ul>
+
+    </ul>
+
+    <script src="./js/jquery-3.6.0.js"></script>
+    <script>
+        $('button').on('click',function(){
+            console.log('好耶');
+            for(let i=1;i<=10;i++){
+                let a = $('ul').append(`<li>item${i}</li>`);
+            }
+        });
+
+        $('ul').on('click',('li'),function(){
+            console.log($(this).text());
+        });
+    </script>
+</body>
+</html>
