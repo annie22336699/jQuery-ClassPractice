@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css添加</title>
+    <style>
+        button{
+            margin: 10px;
+        }
+        .box{
+            width: 200px;
+            height: 200px;
+            background-color: #aef;
+            margin: 10px;
+            transition: 0.5s;
+        }
+        .pink{
+            background-color: #fde;
+        }
+    </style>
+</head>
+<body>
+    <button id="addClass">add</button>
+    <button id="rmClass">remove</button>
+    <button id="tgClass">toggle</button>
+    <button id="hasClass">has</button>
+    <div class="box"></div>
+
+    <script src="./js/jquery-3.6.0.js"></script>
+    <script>
+        $('#addClass').on('click', function(){
+            $('.box').addClass('pink');
+        });
+        $('#rmClass').on('click', function(){
+            $('.box').removeClass('pink');
+        });
+        $('#tgClass').on('click', function(){
+            $('.box').toggleClass('pink');  // 有就添加沒有就拔掉
+        });
+        $('#hasClass').on('click', function(){
+            // console.log("hi", $(".box").hasClass("pink"));
+            if($(".box").hasClass("pink")){
+                $('.box').removeClass('pink');
+            }else{
+                $('.box').addClass('pink'); 
+            }
+            // 做成toggle的樣式
+        });
+    </script>
+</body>
+</html>

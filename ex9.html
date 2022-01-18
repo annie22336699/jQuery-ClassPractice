@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ex9</title>
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.css">
+  </head>
+  <style>
+    .fontS {
+      font-size: 0.8rem;
+    }
+    .fontM {
+      font-size: 1rem;
+    }
+    .fontL {
+      font-size: 1.2rem;
+    }
+  </style>
+  <body>
+    <div class="container my-3">
+      <div class="row justify-content-end">
+        <div class="btn-group">
+          <div id="sBtn" class="btn btn-info">S</div>
+          <div id="mBtn" class="btn btn-info active">M</div>
+          <div id="lBtn" class="btn btn-info">L</div>
+        </div>
+      </div>
+      <h2>jQuery</h2>
+      <p>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veniam velit
+        ipsum corporis rerum eaque repudiandae excepturi, voluptatem, deserunt
+        itaque beatae qui fugit cumque error nesciunt tenetur quis dignissimos
+        minus rem.
+      </p>
+      <p>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veniam velit
+        ipsum corporis rerum eaque repudiandae excepturi, voluptatem, deserunt
+        itaque beatae qui fugit cumque error nesciunt tenetur quis dignissimos
+        minus rem.
+      </p>
+      <!-- <button id="check">check</button> -->
+    </div>
+
+    <script src="./js/jquery-3.6.0.js"></script>
+    <script>
+        // $('#check').on('click', function(){
+        //     console.log($('p').hasClass('fontM'||'fontL'));
+        // });
+        $('#sBtn').on('click',function(){
+            $('p').removeClass('fontM').removeClass('fontL');
+            $('p').addClass('fontS');
+            $('#mBtn').removeClass('active').siblings('#lBtn').removeClass('active');
+            $('#sBtn').addClass('active');
+        });
+        $('#mBtn').on('click',function(){
+            $('p').removeClass('fontS').removeClass('fontL');
+            $('p').addClass('fontM');
+            $('#sBtn').removeClass('active').siblings('#lBtn').removeClass('active');
+            $('#mBtn').addClass('active');
+        });
+        $('#lBtn').on('click',function(){
+            $('p').removeClass('fontS').removeClass('fontM');
+            $('p').addClass('fontL');
+            $('#sBtn').removeClass('active').siblings('#mBtn').removeClass('active');
+            $('#lBtn').addClass('active');
+        });
+    </script>
+  </body>
+</html>

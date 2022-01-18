@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ex10</title>
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.css">
+  </head>
+  <style>
+    .color-demo-area {
+      height: 400px;
+      background-color: #777;
+    }
+
+    .color-select-area {
+      height: 400px;
+      background-color: #eee;
+    }
+    .color-circle {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      margin: 10px;
+    }
+
+    .color-circle:nth-child(1) {
+      background-color: lightskyblue;
+    }
+
+    .color-circle:nth-child(2) {
+      background-color: lightsalmon;
+    }
+  </style>
+  <body>
+    <div class="container my-3">
+      <div class="row">
+        <div class="col-6">
+          <div class="color-demo-area"></div>
+        </div>
+        <div class="col-6" id="test">
+          <div class="color-select-area d-flex">
+            <div class="color-circle"></div>
+            <div class="color-circle"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <script src="./js/jquery-3.6.0.js"></script>
+    <script>
+        $('#test').on('click','.color-circle', function(){
+            // console.log('點看看',$(this));
+            $('.color-demo-area').addClass('color-circle:nth-child(2)');
+        });
+    </script>
+  </body>
+</html>

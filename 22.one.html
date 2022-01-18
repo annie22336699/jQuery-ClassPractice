@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>one事件</title>
+</head>
+<body>
+    <button>click!!</button>
+
+    <script src="./js/jquery-3.6.0.js"></script>
+    <script>
+        $('button').one('click', function(){
+            console.log('OuO!!')
+            // location.reload();  // 偷偷讓他刷新就可以可是這樣有點沒必要XD
+        });
+    </script>
+</body>
+</html>

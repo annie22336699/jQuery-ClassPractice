@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        .box{
+            height: 100px;
+            width: 100px;
+            background-color: #adf;
+            margin: 10px;
+            transition: 0.5s;
+        };
+    </style>
+</head>
+<body>
+    <div class="box box01"></div>
+    <div class="box box02"></div>
+    <div class="box box03">寫點字</div>
+    <button style="margin: 10px;">click</button>
+
+    <script src="./js/jquery-3.6.0.js"></script>
+    <script>
+        console.log('單值為取得',$(".box01").css("background-color"));
+        console.log('雙值為更改',$(".box02").css("background-color",'#555'));
+
+        let style01={
+            color: '#fff',
+            background: '#555',
+        };
+        let style02={
+            background: '#adf',
+        };
+        $('button').on('click',function(){
+            // console.log($(".box").css("background-color")==='rgb(170, 221, 255)');
+            if($(".box03").css("background-color")=='rgb(170, 221, 255)'){
+                $('.box03').css(style01);
+            }else{
+                $('.box03').css(style02);
+            }
+        });
+    </script>
+</body>
+</html>
