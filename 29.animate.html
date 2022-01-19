@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>animate</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" integrity="sha512-c42qTSw/wPZ3/5LBzD+Bw5f7bSF2oxou6wEb+I/lqeaKV5FDIfMvvRp772y4jcJLKuGUOpbJMdg/BTl50fJYAw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+            margin-top: 30px;
+            background-color: #aef;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <button>bounceInDown</button>
+        <button>bounceOut</button>
+        <button>fadeInLeftBig</button>
+        <div class="box animate__animated"></div>
+    </div>
+
+
+    <script src="./js/jquery-3.6.0.js"></script>
+    <script>
+        // 原先
+        /*
+        $('button').click(function(){
+            $('.box').addClass('animate__bounceInDown').one('animationend', function(){
+                $(this).removeClass('animate__bounceInDown')
+            });
+        });
+        */
+
+        // 改良
+        // console.log($(this).text());
+        $('button').click(function(){
+            let animateType = 'animate__'+$(this).text();
+            $('.box').addClass(animateType).one('animationend', function(){
+                $(this).removeClass(animateType)
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>offset</title>
+    <style>
+      body {
+        margin: 0;
+      }
+      .box1 {
+        height: 1000px;
+        width: 100%;
+        background-color: #fea;
+      }
+      .box2 {
+        width: 200px;
+        height: 200px;
+        background-color: #aef;
+        margin: 50px;
+        transition: 0.5s;
+        opacity: 1;
+      }
+      .box2.leave {
+        transform: translateX(-100px);
+        opacity: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box1"></div>
+
+    <script src="./js/jquery-3.6.0.js"></script>
+    <script>
+      // console.log('取得物件座標left,top：',$('.box2').offset());
+      // console.log('取得物件座標top：',$('.box2').offset().top);
+      // console.log('取得物件座標left：',$('.box2').offset().left);
+
+      $(window).scroll(function () {
+        // console.log('視窗拉桿頂：',$(window).scrollTop());
+        if (
+          $(window).scrollTop() >=
+          $(".box2").offset().top - $(window).height()
+        ) {
+          // console.log('hi');
+          $(".box2").removeClass("leave");
+        } else {
+          $(".box2").addClass("leave");
+        }
+      });
+    </script>
+  </body>
+</html>

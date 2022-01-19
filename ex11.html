@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ex11</title>
+    <style>
+      body {
+        margin: 0;
+        height: 300vh;
+      }
+      .box {
+        height: calc(100vh - 50px);
+      }
+
+      .nav {
+        /* position: sticky; 寫完就有以下jq的效果了哭喔*/
+        height: 50px;
+        outline: 1px solid red;
+      }
+
+      nav.fixed {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box"></div>
+    <nav class="nav">I'm nav</nav>
+
+
+    <script src="./js/jquery-3.6.0.js"></script>
+    <script>
+        const navTop = $('.nav').offset().top;
+        // 寫在外面變數不會因為function區域導致變數改變
+        $(window).scroll(function(){
+            console.log(navTop);
+            console.log($(window).scrollTop());
+            if(navTop <= $(window).scrollTop()){
+                // console.log('aaa');
+                $('.nav').addClass('fixed');
+            }else{
+                // console.log('bbb');
+                $('.nav').removeClass('fixed');
+            }
+        });
+    </script>
+  </body>
+</html>

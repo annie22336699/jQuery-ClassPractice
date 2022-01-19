@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ex9</title>
-    <link rel="stylesheet" href="./bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.css" />
   </head>
   <style>
     .fontS {
@@ -45,9 +45,9 @@
 
     <script src="./js/jquery-3.6.0.js"></script>
     <script>
-        // $('#check').on('click', function(){
-        //     console.log($('p').hasClass('fontM'||'fontL'));
-        // });
+      // $('#check').on('click', function(){
+      //     console.log($('p').hasClass('fontM'||'fontL'));
+      // });
         $('#sBtn').on('click',function(){
             $('p').removeClass('fontM').removeClass('fontL');
             $('p').addClass('fontS');
@@ -66,6 +66,36 @@
             $('#sBtn').removeClass('active').siblings('#mBtn').removeClass('active');
             $('#lBtn').addClass('active');
         });
+        
+/*
+      // 老師的解法：把事件綁在一個物件上，比較省資源
+      $(".btn").click(function () {
+        // console.log('選到誰', $(this));
+        // console.log('我是誰：', $(this).is(':contains("S")'));  // 有沒有"S"字，出來為布林值
+
+        if ($(this).is(':contains("S")')) {
+          console.log("s");
+          $("p").removeClass();  // 可以不針對class全清，就裡面不要放class name就好
+          $("p").addClass("fontS");
+          $(".btn").removeClass("active");
+          $(this).addClass("active");
+        }
+        if ($(this).is(':contains("M")')) {
+          console.log("m");
+          $("p").removeClass();
+          $("p").addClass("fontM");
+          $(".btn").removeClass("active");
+          $(this).addClass("active");
+        }
+        if ($(this).is(':contains("L")')) {
+          console.log("l");
+          $("p").removeClass();
+          $("p").addClass("fontL");
+          $(".btn").removeClass("active");
+          $(this).addClass("active");
+        }
+      });
+*/
     </script>
   </body>
 </html>

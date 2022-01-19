@@ -11,6 +11,7 @@
     .color-demo-area {
       height: 400px;
       background-color: #777;
+      transition:0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86);
     }
 
     .color-select-area {
@@ -38,7 +39,7 @@
         <div class="col-6">
           <div class="color-demo-area"></div>
         </div>
-        <div class="col-6" id="test">
+        <div class="col-6">
           <div class="color-select-area d-flex">
             <div class="color-circle"></div>
             <div class="color-circle"></div>
@@ -50,9 +51,10 @@
 
     <script src="./js/jquery-3.6.0.js"></script>
     <script>
-        $('#test').on('click','.color-circle', function(){
-            // console.log('點看看',$(this));
-            $('.color-demo-area').addClass('color-circle:nth-child(2)');
+        $('.color-circle').click(function(){
+            console.log('點看看',$(this));
+            console.log('抓顏色',$(this).css('background-color'));
+            $('.color-demo-area').css('background-color',$(this).css('background-color'));
         });
     </script>
   </body>
