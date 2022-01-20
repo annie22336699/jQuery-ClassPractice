@@ -45,7 +45,24 @@
     <script src="./bootstrap/js/bootstrap.bundle.js"></script>
 
     <script>
+      $("input").click(function () {
+        // 效能比較好
+        console.log("hi", $(this).attr("checked"));
+        console.log("hi", $(this).prop("checked"));
+        // $(this).css("background", "lightblue");
+        if ($(this).prop("checked")) {
+          $(this).closest("tr").css("background", "lightblue");
+        } else {
+          $(this).closest("tr").css("background", "transparent");
+        }
+      });
 
+    //   $("input").click(function () {
+    //    // 效能比較差
+    //     $("tr").css("background", "transparent");
+
+    //     $("input:checked").closest("tr").css("background", "lightblue");
+    //   });
     </script>
 </body>
 </html>

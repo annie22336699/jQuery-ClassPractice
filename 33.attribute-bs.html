@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>attribute-bs</title>
+</head>
+<body>
+    <!-- attribute可以拿來存資料 -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent" >123<div>
+
+
+    <script src="./js/jquery-3.6.0.js"></script>
+    <script>
+    $('button').click(function(){
+        console.log("data-target:", $(this).data("target"));
+        console.log("data-toggle:", $(this).data("toggle"));
+
+        $($(this).data("target")).html("456");
+    });
+    </script>
+</body>
+</html>

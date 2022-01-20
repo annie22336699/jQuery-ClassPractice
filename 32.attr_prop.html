@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>attribute + property</title>
+</head>
+<body>
+    <h2>attribute</h2>
+    <button id="getAttr">去看console</button>
+    <button id="attdel">移除checked</button>
+    <button id="attadd">添加checked</button>
+    <input id="attribute" type="checkbox" checked>
+
+    <h2>property</h2>
+    <button id="getProp">去看console</button>
+    <button id="propdel">移除checked</button>
+    <button id="propadd">添加checked</button>
+    <input id="property" type="checkbox" checked>
+
+
+    <script src="./js/jquery-3.6.0.js"></script>
+    <script>
+    $('#getAttr').click(function(){
+        console.log('有沒有checked ',$('#attribute').attr('checked'))
+    });
+    $('#attdel').click(function(){
+        $('#attribute').removeAttr('checked');
+        console.log('checked已經被移除 ',$('#attribute').attr('checked'))
+    });
+    $('#attadd').click(function(){
+        $('#attribute').attr('checked',true);
+        console.log('checked已經被添加 ',$('#attribute').attr('checked',true))
+    });
+
+    $('#getProp').click(function(){
+        console.log('有沒有checked ',$('#property').prop('checked'))
+        // console.log('有沒有checked ',$('#property').prop('yeyeyeyeye'))
+    });
+    $('#propdel').click(function(){
+        $('#property').prop("checked", true);
+        console.log('checked已經被移除 ',$('#property').prop("checked"));
+        // $('#property').removeProp("disabled", true);
+        // console.log('checked已經被移除 ',$('#property').removeProp("disabled", true));
+        // $('#property').removeProp('yeyeyeyeye');
+        // console.log('checked已經被移除 ',$('#property').removeProp('yeyeyeyeye'));
+    });
+    $('#propadd').click(function(){
+        // $('#property').prop("disabled", true);
+        $('#property').prop('checked');
+        // console.log('checked已經被添加 ',$('#property').prop("disabled", true));
+        // $('#property').prop('checked');
+        // console.log('checked已經被添加 ',$('#property').prop('checked',true));
+    });
+    </script>
+</body>
+</html>

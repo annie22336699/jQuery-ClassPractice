@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>attribute-bs-2</title>
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.css">
+    <style>
+        .box {
+          width: 200px;
+          height: 200px;
+          border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container"></div>
+    <button class="navbar-toggler btn btn-outline-dark" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">click</button>
+
+    <!-- <div class="collapse navbar-collapse" id="navbarSupportedContent" >123<div> -->
+    <div class="box autobg"></div>
+
+
+    <script src="./js/jquery-3.6.0.js"></script>
+    <script src="./bootstrap/js/bootstrap.bundle.js"></script>
+
+    <!-- 老師做的亂數粉色漸層 -->
+    <script>
+        function getRandomInt(max) {
+          return Math.floor(Math.random() * Math.floor(max - 50) + 100);
+        }
+  
+        function getRBGA() {
+          return `linear-gradient(135deg, rgba(${getRandomInt(
+            256
+          )},${getRandomInt(256)},${getRandomInt(256)},.5), rgba(${getRandomInt(
+            256
+          )},${getRandomInt(256)},${getRandomInt(256)},.8)`;
+        }
+  
+        const elements = document.querySelectorAll(".autobg");
+  
+        Array.from(elements).forEach((element, index) => {
+          element.style.backgroundImage = getRBGA();
+        });
+  
+        // $('.autobg').each(function (index, currentElement) {
+        //     currentElement.style.backgroundImage = getRBGA();
+        // });
+    </script>
+
+    <script>
+
+    </script>
+</body>
+</html>

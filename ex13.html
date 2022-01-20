@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>練習13</title>
+    <style>
+        .container{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .imgbox{
+            width: 500px;
+            height: 500px;
+        }
+        .imgbox img{
+            width: 100%;
+            object-fit: cover;
+        }
+        .imgarea{
+            max-width: 80%;
+            display: flex;
+            justify-content: center;
+        }
+        .box{
+            width: 200px;
+            height: 200px;
+            margin: 5px;
+        }
+        .box img{
+            width: 100%;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="imgbox"><img src="./imgs/product1.jpg" alt=""></div>
+        <div class="imgarea">
+            <div class="box">
+                <img src="./imgs/product1.jpg" alt="">
+            </div>
+            <div class="box">
+                <img src="./imgs/product2.jpg" alt="">
+            </div>
+            <div class="box">
+                <img src="./imgs/product3.jpg" alt="">
+            </div>
+            <div class="box">
+                <img src="./imgs/product4.jpg" alt="">
+            </div>
+            <div class="box">
+                <img src="./imgs/product5.jpg" alt="">
+            </div>
+        </div>
+    </div>
+
+    <script src="./js/jquery-3.6.0.js"></script>
+    <script>
+        $('.box').click(function(){
+            // console.log($(this),:hi);
+
+        });
+    </script>
+</body>
+</html>

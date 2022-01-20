@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>attribute</title>
+</head>
+<body>
+<img src="./imgs/product1.jpg" alt="在這邊偷偷來" abc="自定義的也可以">
+
+
+
+    <script src="./js/jquery-3.6.0.js"></script>
+    <script>
+        console.log($('img').attr('src'));
+        console.log('alt的標籤：',$('img').attr('alt'));
+        console.log('abc的標籤：',$('img').attr('abc'));
+        $('img').attr('src','./imgs/product2.jpg');
+
+    </script>
+</body>
+</html>
