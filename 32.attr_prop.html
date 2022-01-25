@@ -38,20 +38,27 @@
         console.log('有沒有checked ',$('#property').prop('checked'))
         // console.log('有沒有checked ',$('#property').prop('yeyeyeyeye'))
     });
+    // $("#propdel").click(function () {
+    //     $("#property").prop("disabled", true);
+        // $("#property").prop("myProp123", "hello");
+    //   });
     $('#propdel').click(function(){
-        $('#property').prop("checked", true);
+        $('#property').prop("checked", false);
         console.log('checked已經被移除 ',$('#property').prop("checked"));
+
         // $('#property').removeProp("disabled", true);
-        // console.log('checked已經被移除 ',$('#property').removeProp("disabled", true));
+
         // $('#property').removeProp('yeyeyeyeye');
         // console.log('checked已經被移除 ',$('#property').removeProp('yeyeyeyeye'));
     });
     $('#propadd').click(function(){
+        // $('#property').prop('checked',true);
+        $('#property').prop('checked','checked');  // 這樣寫也可以
+
         // $('#property').prop("disabled", true);
-        $('#property').prop('checked');
-        // console.log('checked已經被添加 ',$('#property').prop("disabled", true));
-        // $('#property').prop('checked');
-        // console.log('checked已經被添加 ',$('#property').prop('checked',true));
+        // console.log('已經被添加 ',$('#property').prop("disabled", true));
+        // $('#property').Prop('yeyeyeyeye');
+        // console.log('已經被添加 ',$('#property').removeProp('yeyeyeyeye'));
     });
     </script>
 </body>

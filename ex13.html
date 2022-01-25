@@ -59,9 +59,9 @@
 
     <script src="./js/jquery-3.6.0.js"></script>
     <script>
-        $('.box').click(function(){
-            // console.log($(this),:hi);
-
+        $('.box img').click(function(){
+            console.log($(this),':hi');
+            $('.imgbox img').attr("src",$(this).attr("src"));
         });
     </script>
 </body>

@@ -5,8 +5,38 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>練習03</title>
+    <style>
+        .wrap{
+            display: flex;
+        }
+        .box{
+            width: 200px;
+            height: 200px;
+            margin: 10px;
+        }
+        .box img{
+            width: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+    </style>
 </head>
 <body>
-    
+    <div class="wrap">
+        <div class="box"><img src="./imgs/person1.jpg" alt=""></div>
+        <div class="box"><img src="./imgs/person2.jpg" alt=""></div>
+        <div class="box"><img src="./imgs/person3.jpg" alt=""></div>
+        <div class="box"><img src="./imgs/person4.jpg" alt=""></div>
+        <div class="box"><img src="./imgs/person5.jpg" alt=""></div>
+    </div>
+
+
+    <script src="./js/jquery-3.6.0.js"></script>
+    <script>
+    $('.box').click(function(){
+        // console.log('說你好',$(this))
+        $('.box').children().css('border', '5px solid red').css('border-radius','50%');
+    });
+    </script>
 </body>
 </html>

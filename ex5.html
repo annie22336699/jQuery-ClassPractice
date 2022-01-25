@@ -5,6 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>輪播牆</title>
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
     <style>
       .wrap {
         max-width: 800px;
@@ -17,6 +24,7 @@
       ul.img-wrap {
         display: flex;
         padding: 0;
+        margin: 0;
         width: 4000px;
         transition: 0.5s;
         transform: translateX(0px);
@@ -48,6 +56,30 @@
       .slider-dots li:nth-child(1) {
         background: #fff;
       }
+
+      #btn-left-area, #btn-right-area {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 10%;
+        background-color: rgba(250, 116, 116, 0.424);
+        cursor: pointer;
+      }
+
+      #btn-left-area {
+        left: 0;
+      }
+
+      #btn-right-area {
+        right: 0;
+      }
+
+      .fa-caret-left,.fa-caret-right {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        color: #fff;
+      }
     </style>
   </head>
   <body>
@@ -67,6 +99,13 @@
         <li></li>
         <li></li>
       </ul>
+
+      <div id="btn-left-area">
+        <i class="fas fa-caret-left"></i>
+      </div>
+      <div id="btn-right-area">
+        <i class="fas fa-caret-right"></i></i>
+      </div>
     </div>
 
     <script src="./js/jquery-3.6.0.js"></script>
@@ -93,8 +132,23 @@
         // console.log("sliderN :", sliderN);
 
         $("ul.img-wrap").css("transform", `translateX(${sliderN*-800}px)`);  // -800不能包在變數外，會變字串
-
       });
+
+      let page=0;  // 先設定變數為0(輪播從第0頁開始)
+      // 點右邊的時候
+      $('#btn-right-area').click(function(){
+        // console.log('right-click');
+        page++;  // 點右開始+頁數
+        console.log('right-click now page: ',page);
+        $("ul.img-wrap").css("transform", `translateX(${page*-800}px)`);
+      })
+
+      
+
+      // 點左邊的時候
+      $('#btn-left-area').click(function(){
+        console.log('left-click')
+      })
     </script>
   </body>
 </html>
